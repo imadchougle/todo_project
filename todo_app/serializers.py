@@ -10,6 +10,7 @@ class TagSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
 class TodoSerializer(serializers.ModelSerializer):
     tags = TagSerializer(many=True, required=False)
 
