@@ -22,6 +22,7 @@ class TodoSerializerTest(TestCase):
         serializer = TodoSerializer(data=valid_data)
         self.assertTrue(serializer.is_valid())
 
+
 class TodoListViewTest(TestCase):
     def setUp(self):
         # Create a user for authentication
