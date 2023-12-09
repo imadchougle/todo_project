@@ -14,7 +14,9 @@ class Todo(models.Model):
     description = models.TextField(max_length=1000)
     due_date = models.DateTimeField(null=True, blank=True)
     tags = models.ManyToManyField('Tag', blank=True)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='OPEN')
+    status = models.CharField(max_length=10,
+                              choices=STATUS_CHOICES,
+                              default='OPEN')
 
     def __str__(self):
         return self.title

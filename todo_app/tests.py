@@ -8,7 +8,8 @@ from todo_app.serializers import TodoSerializer
 
 class TodoModelTest(TestCase):
     def test_create_todo(self):
-        todo = Todo.objects.create(title='Test Todo', description='Test description')
+        todo = Todo.objects.create(title='Test Todo',
+                                   description='Test description')
         self.assertEqual(str(todo), 'Test Todo')
 
 
@@ -27,7 +28,8 @@ class TodoSerializerTest(TestCase):
 
 class TodoListViewTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.user = User.objects.create_user(username='testuser',
+                                             password='testpassword')
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
 
