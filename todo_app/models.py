@@ -1,6 +1,5 @@
 from django.db import models
-from django.utils import timezone
-from django.core.exceptions import ValidationError
+
 
 class Todo(models.Model):
     STATUS_CHOICES = [
@@ -9,7 +8,6 @@ class Todo(models.Model):
         ('DONE', 'Done'),
         ('OVERDUE', 'Overdue'),
     ]
-
 
     timestamp = models.DateTimeField(auto_now_add=True, editable=False)
     title = models.CharField(max_length=100)
