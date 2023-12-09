@@ -10,6 +10,7 @@ class TodoListCreateView(generics.ListCreateAPIView):
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
+
 class TodoRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
