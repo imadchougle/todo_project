@@ -43,7 +43,10 @@ class Migration(migrations.Migration):
                     default='OPEN',
                     max_length=10
                 )),
-                ('tags', models.ManyToManyField(blank=True, to='todo_app.tag')),
+                ('tags', models.ManyToManyField(
+                    blank=True,
+                    to='todo_app.tag',
+                )),
             ],
         ),
     ]
