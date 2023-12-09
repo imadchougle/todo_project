@@ -11,10 +11,12 @@ class TodoModelTest(TestCase):
         todo = Todo.objects.create(title='Test Todo', description='Test description')
         self.assertEqual(str(todo), 'Test Todo')
 
+
 class TagModelTest(TestCase):
     def test_create_tag(self):
         tag = Tag.objects.create(name='Test Tag')
         self.assertEqual(str(tag), 'Test Tag')
+
 
 class TodoSerializerTest(TestCase):
     def test_valid_serializer_data(self):
@@ -25,7 +27,6 @@ class TodoSerializerTest(TestCase):
 
 class TodoListViewTest(TestCase):
     def setUp(self):
-        # Create a user for authentication
         self.user = User.objects.create_user(username='testuser', password='testpassword')
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
