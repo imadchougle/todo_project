@@ -27,3 +27,6 @@ jobs:
       run: |
         black .
         git diff --exit-code --quiet || git commit -am "Apply black formatting fixes"
+
+    - name: Print flake8 result
+      run: cat flake8_result.txt
