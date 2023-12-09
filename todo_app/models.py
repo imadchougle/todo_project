@@ -18,6 +18,9 @@ class Todo(models.Model):
     tags = models.ManyToManyField('Tag', blank=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='OPEN')
 
+    def __str__(self):
+        return self.title
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
